@@ -60,16 +60,17 @@ public final class QueryUtils {
 
                 String magnitude = properties.getString("mag");
                 String location = properties.getString("place");
-                String time = properties.getString("time");
+                Long time = properties.getLong("time");
 
-                Long timeInMilliseconds = Long.parseLong(time);
-                Date dateObject = new Date(timeInMilliseconds);
+                Date dateObject = new Date(time);
 
                 SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM DD, yyyy", Locale.getDefault());
                 String dateToDisplay = dateFormatter.format(dateObject);
 
+                SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
+                String timeToDisplay = timeFormatter.format(dateObject);
 
-                earthquakes.add(new Earthquake(magnitude, location, dateToDisplay));
+                earthquakes.add(new Earthquake(magnitude, location, dateToDisplay, timeToDisplay));
             }
 
         } catch (JSONException e) {

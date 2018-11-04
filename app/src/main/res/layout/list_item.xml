@@ -29,4 +29,13 @@
         tools:text="Feb 8, 2018"
         />
 
+    <TextView
+        android:id="@+id/quake_time"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        tools:text="Feb 8, 2018"
+        />
+
 </LinearLayout>
