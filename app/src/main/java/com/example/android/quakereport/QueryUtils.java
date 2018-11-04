@@ -62,12 +62,13 @@ public final class QueryUtils {
                 String location = properties.getString("place");
                 Long time = properties.getLong("time");
 
+
                 Date dateObject = new Date(time);
 
                 SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM DD, yyyy", Locale.getDefault());
                 String dateToDisplay = dateFormatter.format(dateObject);
 
-                SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm a");
                 String timeToDisplay = timeFormatter.format(dateObject);
 
                 earthquakes.add(new Earthquake(magnitude, location, dateToDisplay, timeToDisplay));

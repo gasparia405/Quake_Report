@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
+    private static final String LOCATION_SEPARATOR = " of ";
+
     // Create a default constructor using the context and ArrayList<Earthquake>
     public EarthquakeAdapter(Context context, ArrayList<Earthquake> earthquakes) {
         super(context, 0, earthquakes);
@@ -19,6 +21,8 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listItemView = convertView;
+        String primaryLocation;
+        String locationOffset;
 
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext())
@@ -28,12 +32,25 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         // Find current Earthquake
         Earthquake currentEarthquake = getItem(position);
 
+        String originalLocation = currentEarthquake.getmLocation();
+        if (originalLocation.contains(LOCATION_SEPARATOR)) {
+            String[] parts = originalLocation.split(LOCATION_SEPARATOR);
+            locationOffset = parts[0] + LOCATION_SEPARATOR;
+            primaryLocation = parts[1];
+        } else {
+            locationOffset = getContext().getString(R.string.near_the);
+            primaryLocation = originalLocation;
+        }
+
         // Set all variable texts
         TextView magnitude = listItemView.findViewById(R.id.magnitude);
         magnitude.setText(currentEarthquake.getmMagnitude());
 
+        TextView proximity = listItemView.findViewById(R.id.proximity);
+        proximity.setText(locationOffset);
+        
         TextView location = listItemView.findViewById(R.id.location);
-        location.setText(currentEarthquake.getmLocation());
+        location.setText(primaryLocation);
 
         TextView quakeDate = listItemView.findViewById(R.id.quake_date);
         quakeDate.setText(currentEarthquake.getmQuakeDate());

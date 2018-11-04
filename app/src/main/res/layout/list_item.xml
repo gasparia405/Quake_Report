@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
+    android:layout_height="wrap_content"
+    android:minHeight="40dp"
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
@@ -11,6 +12,14 @@
         android:layout_weight="2"
         android:gravity="center_horizontal"
         tools:text="8"/>
+
+    <TextView
+        android:id="@+id/proximity"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        tools:text="Near the"/>
 
     <TextView
         android:id="@+id/location"
@@ -35,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_weight="1"
         android:gravity="center_horizontal"
-        tools:text="Feb 8, 2018"
+        tools:text="12:00 AM"
         />
 
 </LinearLayout>
