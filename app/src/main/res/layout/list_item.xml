@@ -7,10 +7,11 @@
 
     <TextView
         android:id="@+id/magnitude"
-        android:layout_height="match_parent"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-        android:gravity="center_horizontal"
+        android:layout_height="36dp"
+        android:layout_width="36dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/magnitude_circle"
+        android:gravity="center"
         tools:text="8"/>
 
     <TextView
@@ -18,7 +19,8 @@
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:layout_weight="2"
-        android:gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="16dp"
         tools:text="Near the"/>
 
     <TextView
@@ -26,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:layout_weight="4"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         tools:text="San Francisco"/>
 
     <TextView
@@ -34,7 +36,7 @@
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:layout_weight="1"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         tools:text="Feb 8, 2018"
         />
 
@@ -43,7 +45,7 @@
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:layout_weight="1"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         tools:text="12:00 AM"
         />
 
