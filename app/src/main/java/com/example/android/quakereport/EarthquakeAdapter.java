@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
@@ -44,11 +45,14 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         // Set all variable texts
         TextView magnitude = listItemView.findViewById(R.id.magnitude);
-        magnitude.setText(currentEarthquake.getmMagnitude());
+        Double rawMagnitude = currentEarthquake.getmMagnitude();
+        DecimalFormat tenths = new DecimalFormat("0.0");
+        String roundedMagnitude = tenths.format(rawMagnitude);
+        magnitude.setText(roundedMagnitude);
 
         TextView proximity = listItemView.findViewById(R.id.proximity);
         proximity.setText(locationOffset);
-        
+
         TextView location = listItemView.findViewById(R.id.location);
         location.setText(primaryLocation);
 
