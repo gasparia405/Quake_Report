@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/magnitude"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        tools:text="8"/>
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:gravity="center_horizontal"
+        tools:text="San Francisco"/>
+
+    <TextView
+        android:id="@+id/quake_date"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        tools:text="Feb 8, 2018"
+        />
+
+</LinearLayout>
