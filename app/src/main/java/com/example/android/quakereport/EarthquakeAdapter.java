@@ -35,7 +35,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         // Find current Earthquake
         Earthquake currentEarthquake = getItem(position);
 
-        String originalLocation = currentEarthquake.getmLocation();
+        String originalLocation = currentEarthquake.getLocation();
         if (originalLocation.contains(LOCATION_SEPARATOR)) {
             String[] parts = originalLocation.split(LOCATION_SEPARATOR);
             locationOffset = parts[0] + LOCATION_SEPARATOR;
@@ -47,7 +47,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         // Set all variable texts
         TextView magnitude = listItemView.findViewById(R.id.magnitude);
-        Double rawMagnitude = currentEarthquake.getmMagnitude();
+        Double rawMagnitude = currentEarthquake.getMagnitude();
         DecimalFormat tenths = new DecimalFormat("0.0");
         String roundedMagnitude = tenths.format(rawMagnitude);
         magnitude.setText(roundedMagnitude);
@@ -59,17 +59,17 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         location.setText(primaryLocation);
 
         TextView quakeDate = listItemView.findViewById(R.id.quake_date);
-        quakeDate.setText(currentEarthquake.getmQuakeDate());
+        quakeDate.setText(currentEarthquake.getQuakeDate());
 
         TextView quakeTime = listItemView.findViewById(R.id.quake_time);
-        quakeTime.setText(currentEarthquake.getmQuakeTime());
+        quakeTime.setText(currentEarthquake.getQuakeTime());
 
         // Set the proper background color on the magnitude circle.
         // Fetch the background from the TextView, which is a GradientDrawable.
         GradientDrawable magnitudeCircle = (GradientDrawable) magnitude.getBackground();
 
         // Get the appropriate background color based on the current earthquake magnitude
-        int magnitudeColor = getMagnitudeColor(currentEarthquake.getmMagnitude());
+        int magnitudeColor = getMagnitudeColor(currentEarthquake.getMagnitude());
 
         // Set the color on the magnitude circle
         magnitudeCircle.setColor(magnitudeColor);

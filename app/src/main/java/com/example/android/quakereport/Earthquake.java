@@ -6,24 +6,28 @@ public class Earthquake {
     private String mLocation;
     private String mQuakeDate;
     private String mQuakeTime;
+    private String mQuakeUri;
 
-    public Earthquake(Double magnitude, String location, String quakeDate, String quakeTime){
+    public Earthquake(Double magnitude, String location, String quakeDate, String quakeTime, String quakeUri){
         mMagnitude = magnitude;
         mLocation = location;
         mQuakeDate = quakeDate;
         mQuakeTime = quakeTime;
+        mQuakeUri = quakeUri;
     }
 
 
-    public Double getmMagnitude() {
+    public Double getMagnitude() {
         return mMagnitude;
     }
 
-    public String getmLocation() {  return mLocation;  }
+    public String getLocation() {  return mLocation;  }
 
-    public String getmQuakeDate() {
+    public String getQuakeDate() {
         return mQuakeDate;
     }
 
-    public String getmQuakeTime() { return mQuakeTime; }
+    public String getQuakeTime() { return mQuakeTime; }
+
+    public String getQuakeUri() { return mQuakeUri; }
 }

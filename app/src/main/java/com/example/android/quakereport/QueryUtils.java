@@ -61,6 +61,7 @@ public final class QueryUtils {
                 Double magnitude = properties.getDouble("mag");
                 String location = properties.getString("place");
                 Long time = properties.getLong("time");
+                String quakeUri = properties.getString("url");
 
 
                 Date dateObject = new Date(time);
@@ -71,7 +72,7 @@ public final class QueryUtils {
                 SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm a");
                 String timeToDisplay = timeFormatter.format(dateObject);
 
-                earthquakes.add(new Earthquake(magnitude, location, dateToDisplay, timeToDisplay));
+                earthquakes.add(new Earthquake(magnitude, location, dateToDisplay, timeToDisplay, quakeUri));
             }
 
         } catch (JSONException e) {
